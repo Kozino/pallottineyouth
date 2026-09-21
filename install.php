@@ -63,7 +63,7 @@ if ($connected && $needImport && isset($_GET['import'])) {
 ?>
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Install — Pallottine Nigerian Youth</title>
-<style>body{font-family:Arial,sans-serif;background:#f3f4f8;padding:2rem} .box{background:#fff;max-width:640px;margin:0 auto;border-radius:14px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,.1)} li{margin:.5rem 0} .ok{color:green} .bad{color:#c0392b} .btn{display:inline-block;background:#0B1F4B;color:#fff;padding:.7rem 1.4rem;border-radius:10px;text-decoration:none;font-weight:700;margin-top:1rem}</style>
+<style>body{font-family:Arial,sans-serif;background:#f3f4f8;padding:2rem} .box{background:#fff;max-width:640px;margin:0 auto;border-radius:14px;padding:2rem;box-shadow:0 10px 30px rgba(0,0,0,.1)} li{margin:.5rem 0} .ok{color:green} .bad{color:#c0392b} .btn{display:inline-block;background:#E63946;color:#fff;padding:.7rem 1.4rem;border-radius:10px;text-decoration:none;font-weight:700;margin-top:1rem}</style>
 </head><body><div class="box">
 <h1>🛠️ Installation Check</h1>
 <?php if ($msg): ?><p><strong><?= htmlspecialchars($msg) ?></strong></p><?php endif; ?>
