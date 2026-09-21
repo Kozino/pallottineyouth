@@ -1,0 +1,25 @@
+# Pallottine Nigerian Youth — Apache config
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Force HTTPS on live domain (uncomment after SSL is installed)
+  # RewriteCond %{HTTPS} off
+  # RewriteCond %{HTTP_HOST} ^(www\.)?pallottineyouthnig\.com$ [NC]
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "^(config\.php|database\.php|functions\.php|database\.sql|database\.sqlite)$">
+  <IfModule mod_authz_core.c>Require all denied</IfModule>
+  <IfModule !mod_authz_core.c>Deny from all</IfModule>
+</FilesMatch>
+
+# Pretty error page
+ErrorDocument 404 /404.php
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
