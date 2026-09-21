@@ -21,7 +21,7 @@ try {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= e($pageTitle ?? 'Admin') ?> — Admin · <?= e(setting('site_name')) ?></title>
-<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/images/favicon.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
@@ -32,7 +32,7 @@ try {
 <div class="admin-shell">
   <aside class="sidebar" id="sidebar">
     <a href="dashboard.php" class="side-brand">
-      <svg viewBox="0 0 48 48" width="34" height="34"><circle cx="24" cy="24" r="22" fill="#C9A227"/><path d="M24 8v24M15 17h18" stroke="#0B1F4B" stroke-width="3.4" stroke-linecap="round"/></svg>
+      <img src="../assets/images/logo.png" alt="Logo">
       <span><strong>Pallottine Youth</strong><small>Admin Panel</small></span>
     </a>
     <nav class="side-nav">
