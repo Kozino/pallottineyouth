@@ -25,7 +25,7 @@ $pageTitle = 'Admin Login';
 require_once __DIR__ . '/includes/admin-header.php';
 ?>
 <div class="login-card">
-  <svg viewBox="0 0 48 48" width="52" height="52" style="margin:0 auto"><circle cx="24" cy="24" r="22" fill="#0B1F4B"/><path d="M24 8v24M15 17h18" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><path d="M14 33c3-2.5 6.4-3.6 10-3.6s7 1.1 10 3.6" stroke="#C9A227" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+  <img src="../assets/images/logo.png" alt="Pallottine Nigerian Youth" style="height:84px;margin:0 auto">
   <h1>Pallottine Youth — Admin</h1>
   <p>Sign in to manage shop, orders, applications, news &amp; settings.</p>
   <?php if ($error): ?><div class="flash flash-error"><?= e($error) ?></div><?php endif; ?>
