@@ -48,7 +48,9 @@ $active    = $active ?? '';
       <span></span><span></span><span></span>
     </button>
 
+    <div class="nav-overlay" id="navOverlay"></div>
     <nav class="main-nav" id="mainNav">
+      <button class="nav-close" id="navClose" aria-label="Close menu">×</button>
       <a href="index.php" class="<?= $active==='home'?'on':'' ?>">Home</a>
       <a href="about.php" class="<?= $active==='about'?'on':'' ?>">About</a>
       <a href="programs.php" class="<?= $active==='programs'?'on':'' ?>">Apostolates</a>
