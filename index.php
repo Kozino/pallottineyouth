@@ -97,7 +97,7 @@ $events = db()->query("SELECT * FROM events WHERE status='upcoming' ORDER BY eve
       <h2>Shop — Wear &amp; Share the Faith</h2>
       <p>Branded shirts, devotionals, books and more. Every purchase supports youth apostolate.</p>
     </div>
-    <div class="product-grid" style="grid-template-columns:repeat(4,1fr)">
+    <div class="product-grid cols-4">
       <?php foreach ($featured as $p): ?>
       <div class="product">
         <a href="product.php?slug=<?= e($p['slug']) ?>"><img src="<?= e(product_image($p['image'])) ?>" alt="<?= e($p['name']) ?>"></a>

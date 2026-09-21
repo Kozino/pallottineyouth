@@ -35,10 +35,12 @@ $pages = max(1, (int) ceil($total / $per));
   <div class="container shop-layout">
     <aside class="shop-side">
       <h4>Categories</h4>
+      <div class="cat-list">
       <a href="shop.php?cat=all" class="<?= ($cat==='all'||$cat==='')?'on':'' ?>">All Items (<?= (int) db()->query("SELECT COUNT(*) c FROM products WHERE status='active'")->fetch()['c'] ?>)</a>
       <?php foreach ($cats as $c): ?>
         <a href="shop.php?cat=<?= urlencode($c) ?>" class="<?= $cat===$c?'on':'' ?>"><?= e($c) ?></a>
       <?php endforeach; ?>
+      </div>
       <h4 style="margin-top:1.4rem">How it works</h4>
       <p class="hint">1️⃣ Add items to cart<br>2️⃣ Checkout &amp; transfer to our bank<br>3️⃣ Upload receipt<br>4️⃣ We confirm &amp; deliver 🎉</p>
       <a href="track-order.php" class="btn btn-outline btn-sm btn-block" style="margin-top:.8rem">Track Order</a>

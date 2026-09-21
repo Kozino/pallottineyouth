@@ -30,6 +30,7 @@ $related = $rel->fetchAll();
       </div>
       <span class="stock <?= ((int)$p['stock']>0)?'in':'out' ?>"><?= ((int)$p['stock']>0) ? '● In stock ('.(int)$p['stock'].' available)' : '● Out of stock' ?></span>
       <p style="margin:1rem 0"><?= nl2br(e($p['description'] ?: $p['short_desc'] ?? '')) ?></p>
+      <div data-unit-price="<?= (float)$p['price'] ?>">
       <form method="post" action="cart.php" class="js-add-cart" style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">
         <?= csrf_field() ?>
         <input type="hidden" name="action" value="add">
@@ -38,6 +39,8 @@ $related = $rel->fetchAll();
         <button class="btn btn-navy" type="submit" <?= ((int)$p['stock']<=0)?'disabled':'' ?>>Add to Cart 🛒</button>
         <a href="checkout.php" class="btn btn-gold">Buy Now →</a>
       </form>
+      <div class="live-total">Total: <span data-live-total><?= naira($p['price']) ?></span></div>
+      </div>
       <div class="bank-box" style="margin-top:1.4rem">
         <h3>🏦 Pay by Bank Transfer</h3>
         <div class="bank-row"><span>Bank</span><strong><?= e(setting('bank_name')) ?></strong></div>
@@ -50,7 +53,7 @@ $related = $rel->fetchAll();
   <?php if ($related): ?>
   <div class="container" style="margin-top:3rem">
     <h2 style="margin-bottom:1.2rem">You may also like</h2>
-    <div class="product-grid" style="grid-template-columns:repeat(4,1fr)">
+    <div class="product-grid cols-4">
       <?php foreach ($related as $r): ?>
       <div class="product">
         <a href="product.php?slug=<?= e($r['slug']) ?>"><img src="<?= e(product_image($r['image'])) ?>" alt="<?= e($r['name']) ?>"></a>
