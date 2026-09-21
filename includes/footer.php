@@ -4,6 +4,20 @@ $wa = preg_replace('/\D/', '', setting('site_whatsapp', ''));
 ?>
 </main>
 
+<!-- Mini cart drawer -->
+<div class="mini-overlay" id="miniOverlay"></div>
+<aside class="mini-cart" id="miniCart" aria-label="Shopping cart preview">
+  <div class="mini-head"><strong>🛒 Added to Cart</strong><button id="miniClose" aria-label="Close">×</button></div>
+  <div class="mini-items" id="miniItems"></div>
+  <div class="mini-foot">
+    <div class="mini-sub"><span>Subtotal</span><span id="miniSub">₦0.00</span></div>
+    <div class="row">
+      <a href="cart.php" class="btn btn-outline btn-sm">View Cart</a>
+      <a href="checkout.php" class="btn btn-gold btn-sm">Checkout →</a>
+    </div>
+  </div>
+</aside>
+
 <!-- Live chat / WhatsApp float -->
 <div class="chat-float">
   <button class="chat-btn" id="chatBtn" aria-label="Chat with us">💬</button>
@@ -37,11 +51,7 @@ $wa = preg_replace('/\D/', '', setting('site_whatsapp', ''));
   <div class="container footer-grid">
     <div class="f-col f-about">
       <div class="f-brand">
-        <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">
-          <circle cx="24" cy="24" r="22" fill="#fff"/>
-          <path d="M24 8v24M15 17h18" stroke="#0B1F4B" stroke-width="3.4" stroke-linecap="round"/>
-          <path d="M14 33c3-2.5 6.4-3.6 10-3.6s7 1.1 10 3.6" stroke="#C9A227" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        </svg>
+        <img src="assets/images/logo.png" alt="Pallottine Nigerian Youth logo">
         <div><strong><?= e(setting('site_name')) ?></strong><small><?= e(setting('tagline')) ?></small></div>
       </div>
       <p>Helping young Catholics in Nigeria understand, live and share their faith — in the spirit of St. Vincent Pallotti: <em>“The love of Christ impels us.”</em></p>

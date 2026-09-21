@@ -18,7 +18,7 @@ $active    = $active ?? '';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= e($pageTitle ?? $siteName) ?> — <?= e($siteName) ?></title>
 <meta name="description" content="<?= e($pageDesc ?? $tagline) ?>">
-<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,15 +37,7 @@ $active    = $active ?? '';
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.php" class="brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
-          <circle cx="24" cy="24" r="22" fill="#0B1F4B"/>
-          <circle cx="24" cy="24" r="22" fill="none" stroke="#C9A227" stroke-width="2"/>
-          <path d="M24 8v24M15 17h18" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
-          <path d="M14 33c3-2.5 6.4-3.6 10-3.6s7 1.1 10 3.6" stroke="#C9A227" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-          <circle cx="24" cy="30" r="1.8" fill="#C9A227"/>
-        </svg>
-      </span>
+      <span class="brand-mark"><img src="assets/images/logo.png" alt="Pallottine Nigerian Youth logo"></span>
       <span class="brand-text">
         <strong>Pallottine Nigerian Youth</strong>
         <small>Society of the Catholic Apostolate · Nigeria</small>
@@ -64,7 +56,7 @@ $active    = $active ?? '';
       <a href="events.php" class="<?= $active==='events'?'on':'' ?>">Events</a>
       <a href="shop.php" class="<?= $active==='shop'?'on':'' ?>">Shop</a>
       <a href="contact.php" class="<?= $active==='contact'?'on':'' ?>">Contact</a>
-      <a href="cart.php" class="nav-cart <?= $active==='cart'?'on':'' ?>" aria-label="Cart">
+      <a href="cart.php" class="nav-cart <?= $active==='cart'?'on':'' ?>" aria-label="Open cart">
         🛒 Cart <span class="cart-badge" id="cartBadge"><?= (int)$cartCount ?></span>
       </a>
       <a href="apply.php" class="btn btn-gold btn-sm nav-cta">Apply / Join</a>
