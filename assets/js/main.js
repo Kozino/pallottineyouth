@@ -7,17 +7,26 @@
     return "₦" + n.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   };
 
-  /* ---------- Mobile nav ---------- */
+  /* ---------- Mobile nav (drawer + overlay) ---------- */
   var toggle = document.getElementById("navToggle");
   var nav = document.getElementById("mainNav");
+  var navOverlay = document.getElementById("navOverlay");
+  var navClose = document.getElementById("navClose");
+  var setMenu = function (open) {
+    if (!nav || !toggle) return;
+    nav.classList.toggle("open", open);
+    document.body.classList.toggle("menu-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    if (navOverlay) navOverlay.classList.toggle("show", open);
+  };
   if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+    toggle.addEventListener("click", function () { setMenu(!nav.classList.contains("open")); });
+    if (navClose) navClose.addEventListener("click", function () { setMenu(false); });
+    if (navOverlay) navOverlay.addEventListener("click", function () { setMenu(false); });
     nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { nav.classList.remove("open"); });
+      a.addEventListener("click", function () { setMenu(false); });
     });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
   }
 
   /* ---------- Live chat panel ---------- */
